@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package org.jlab.rec.htcc;
 
 import org.jlab.evio.clas12.EvioDataBank;
@@ -16,21 +10,25 @@ import org.jlab.evio.clas12.EvioSource;
  */
 public class HTCCReconstruction {
     public void processEvent(EvioDataEvent event){
-        EvioDataBank bankTRUE = (EvioDataBank) event.getBank("HTCC:true");
-        EvioDataBank bankDGTZ = (EvioDataBank) event.getBank("HTCC:dgtz");
+        // EvioDataBank bankTRUE = (EvioDataBank) event.getBank("HTCC::true");
+        EvioDataBank bankDGTZ = (EvioDataBank) event.getBank("HTCC::dgtz");
         
-        int[] sector = bankDGTZ.getInt("sector");
-        
+        // bankTRUE.show();
+        bankDGTZ.show();   
     }
+    
     /**
      * Main routine for testing.
-     * @param args 
+     * 
+     * The environment variable $CLAS12DIR must be set and point to a directory 
+     * that contains lib/bankdefs/clas12/<dictionary file name>.xml
+     *
+     * @param args ignored
      */
     public static void main(String[] args){
-        String inputfile = args[0];
-        String dictdir   = args[1];
+        String inputfile = "out.ev";
         
-        EvioSource reader = new EvioSource(dictdir);
+        EvioSource reader = new EvioSource();
         reader.open(inputfile);
         
         HTCCReconstruction htccRec = new HTCCReconstruction();
