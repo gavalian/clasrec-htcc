@@ -1,6 +1,5 @@
 package org.jlab.rec.htcc;
 
-import org.jlab.evio.clas12.EvioDataBank;
 import org.jlab.evio.clas12.EvioDataEvent;
 import org.jlab.evio.clas12.EvioSource;
 
@@ -9,12 +8,15 @@ import org.jlab.evio.clas12.EvioSource;
  * @author gavalian
  */
 public class HTCCReconstruction {
-    public void processEvent(EvioDataEvent event){
-        // EvioDataBank bankTRUE = (EvioDataBank) event.getBank("HTCC::true");
-        EvioDataBank bankDGTZ = (EvioDataBank) event.getBank("HTCC::dgtz");
+    private final HTCCDetectorProcess detectorProcess;
+    
+    public HTCCReconstruction() {
+        detectorProcess = new HTCCDetectorProcess();
+    }
+    
+    public void processEvent(EvioDataEvent event) {
+        detectorProcess.processEvent(event);
         
-        // bankTRUE.show();
-        bankDGTZ.show();   
     }
     
     /**
