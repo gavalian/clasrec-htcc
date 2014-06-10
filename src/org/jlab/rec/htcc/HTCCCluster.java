@@ -7,7 +7,9 @@ import java.util.Set;
 
 /**
  *
- * @author jnhankins
+ * @author J. Hankins
+ * @author A. Puckett
+ * @author G. Gavalian
  */
 class HTCCCluster {
     private int nhitclust;
