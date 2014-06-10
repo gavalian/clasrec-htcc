@@ -276,6 +276,9 @@ public class HTCCReconstruction {
         // Determine the size of the output
         int size = clusters.size();
         
+        if (size == 0)
+            return;
+        
         // Create the output bank
         EvioDataDictionary dict = (EvioDataDictionary) event.getDictionary();
         EvioDataBank bankClusters = (EvioDataBank) dict.createBank("HTCCRec::clusters", size);
