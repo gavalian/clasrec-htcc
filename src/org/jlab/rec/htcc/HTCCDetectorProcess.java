@@ -3,6 +3,7 @@ package org.jlab.rec.htcc;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.jlab.evio.clas12.EvioDataBank;
 import org.jlab.evio.clas12.EvioDataEvent;
 
 /**
@@ -251,8 +252,6 @@ public class HTCCDetectorProcess {
             dphi[i]     = cluster.getDPhi();
         }
         
-        // TODO add the arrays to the bank
-        
         System.out.println("   nhits: "+Arrays.toString(nhits));
         System.out.println("  ntheta: "+Arrays.toString(ntheta));
         System.out.println("    nphi: "+Arrays.toString(nphi));
@@ -266,6 +265,24 @@ public class HTCCDetectorProcess {
         System.out.println("  dtheta: "+Arrays.toString(dtheta));
         System.out.println("     phi: "+Arrays.toString(phi));
         System.out.println("    dphi: "+Arrays.toString(dphi));
+        
+        // TODO:
+        EvioDataBank bank = (EvioDataBank) event.getBank("HTCC::???");
+        
+        // TODO:
+        bank.setInt("nhits",    nhits);
+        bank.setInt("ntheta",   ntheta);
+        bank.setInt("nphi",     nphi);
+        bank.setInt("mintheta", mintheta);
+        bank.setInt("maxtheta", maxtheta);
+        bank.setInt("minphi",   minphi);
+        bank.setInt("maxphi",   maxphi);
+        bank.setInt("nphe",     nphe);
+        bank.setDouble("time",   time);
+        bank.setDouble("theta",  theta);
+        bank.setDouble("dtheta", dtheta);
+        bank.setDouble("phi",    phi);
+        bank.setDouble("dphi",   dphi);
     }
     
     
