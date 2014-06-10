@@ -5,7 +5,9 @@ import org.jlab.evio.clas12.EvioSource;
 
 /**
  *
- * @author gavalian
+ * @author J. Hankins
+ * @author A. Puckett
+ * @author G. Gavalian
  */
 public class HTCCReconstruction {
     private final HTCCDetectorProcess htccDetectorProcess;

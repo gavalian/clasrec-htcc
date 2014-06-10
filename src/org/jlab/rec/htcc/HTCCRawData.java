@@ -5,7 +5,9 @@ import org.jlab.evio.clas12.EvioDataEvent;
 
 /**
  *
- * @author Jeremiah Hankins
+ * @author J. Hankins
+ * @author A. Puckett
+ * @author G. Gavalian
  */
 public class HTCCRawData {
     private int[] hitn;

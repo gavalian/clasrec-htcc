@@ -1,14 +1,14 @@
 package org.jlab.rec.htcc;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import org.jlab.evio.clas12.EvioDataBank;
 import org.jlab.evio.clas12.EvioDataEvent;
 
 /**
  *
- * @author Jeremiah Hankins
+ * @author J. Hankins
+ * @author A. Puckett
+ * @author G. Gavalian
  */
 public class OTOFDetectorProcess {
     
@@ -44,7 +44,6 @@ public class OTOFDetectorProcess {
         double[] hitXOut   = new double[nhitsOut];
         double[] hitYOut   = new double[nhitsOut];
         double[] hitZOut   = new double[nhitsOut];
-        
         
         int out = 0;
         for (int in=0; in<nhitsIn; ++in) {
