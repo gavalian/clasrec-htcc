@@ -71,6 +71,9 @@ public class HTCCReconstruction {
     void readBankInput(EvioDataEvent event) {
         EvioDataBank bankDGTZ = (EvioDataBank) event.getBank("HTCC::dgtz");
 
+        if (bankDGTZ.rows() == 0)
+            return;
+        
         hitnArray   = bankDGTZ.getInt("hitn");
         sectorArray = bankDGTZ.getInt("sector");
         ringArray   = bankDGTZ.getInt("ring");
