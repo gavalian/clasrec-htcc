@@ -16,7 +16,6 @@ public class HTCCRawData {
     private int[] time;
 
     void loadEventData(EvioDataEvent event) {
-        //EvioDataBank bankTRUE = (EvioDataBank) event.getBank("HTCC::true");
         EvioDataBank bankDGTZ = (EvioDataBank) event.getBank("HTCC::dgtz");
         
         hitn   = bankDGTZ.getInt("hitn");

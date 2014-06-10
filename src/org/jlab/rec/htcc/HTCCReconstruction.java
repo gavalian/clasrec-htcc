@@ -8,15 +8,17 @@ import org.jlab.evio.clas12.EvioSource;
  * @author gavalian
  */
 public class HTCCReconstruction {
-    private final HTCCDetectorProcess detectorProcess;
+    private final HTCCDetectorProcess htccDetectorProcess;
+    private final OTOFDetectorProcess otofDetectorProcess;
     
     public HTCCReconstruction() {
-        detectorProcess = new HTCCDetectorProcess();
+        htccDetectorProcess = new HTCCDetectorProcess();
+        otofDetectorProcess = new OTOFDetectorProcess();
     }
     
     public void processEvent(EvioDataEvent event) {
-        detectorProcess.processEvent(event);
-        
+        htccDetectorProcess.processEvent(event);
+        otofDetectorProcess.processEvent(event);
     }
     
     /**
