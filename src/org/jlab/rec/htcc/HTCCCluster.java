@@ -71,13 +71,6 @@ class HTCCCluster {
     }
     
     void addHit(int itheta, int iphi, int nphe, double time, double theta, double phi, double dtheta, double dphi) {
-        // TODO remove after testing
-        if (!(0 <= itheta && itheta < 4))
-            throw new IllegalArgumentException("itheta");
-        if (!(0 <= iphi && iphi < 12))
-            throw new IllegalArgumentException("iphi");
-        if (!(0 <= nphe))
-            throw new IllegalArgumentException("nphe");
         setitheta.add(itheta);
         setiphi.add(iphi);
         hititheta.add(itheta);
